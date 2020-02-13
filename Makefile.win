@@ -1,0 +1,52 @@
+# Project: proyecto1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Lis.o Arb.o ArbAVL.o Her.o LisCir.o LisDob.o MatDis.o Men.o
+LINKOBJ  = main.o Lis.o Arb.o ArbAVL.o Her.o LisCir.o LisDob.o MatDis.o Men.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = proyecto1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Lis.o: Lis.cpp
+	$(CPP) -c Lis.cpp -o Lis.o $(CXXFLAGS)
+
+Arb.o: Arb.cpp
+	$(CPP) -c Arb.cpp -o Arb.o $(CXXFLAGS)
+
+ArbAVL.o: ArbAVL.cpp
+	$(CPP) -c ArbAVL.cpp -o ArbAVL.o $(CXXFLAGS)
+
+Her.o: Her.cpp
+	$(CPP) -c Her.cpp -o Her.o $(CXXFLAGS)
+
+LisCir.o: LisCir.cpp
+	$(CPP) -c LisCir.cpp -o LisCir.o $(CXXFLAGS)
+
+LisDob.o: LisDob.cpp
+	$(CPP) -c LisDob.cpp -o LisDob.o $(CXXFLAGS)
+
+MatDis.o: MatDis.cpp
+	$(CPP) -c MatDis.cpp -o MatDis.o $(CXXFLAGS)
+
+Men.o: Men.cpp
+	$(CPP) -c Men.cpp -o Men.o $(CXXFLAGS)
